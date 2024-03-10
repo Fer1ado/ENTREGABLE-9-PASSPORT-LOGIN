@@ -1,0 +1,17 @@
+<h2> Carrito Nro: {{this.cart}}</h2>
+
+<h4>tiene los siguientes productos:</h4>
+
+<body class="container">
+    <div class="container">
+        {{#each item}}
+            <ul class="list-group list-group-flush lista">
+            <li class="list-group-item list-group-item-secondary"><h5>ID : {{this.id}}</h5></li>
+            <li class="list-group-item ">Title: {{this.title}}</li>
+            <li class="list-group-item"><h5>Cantidad: {{this.quantity}}</h5></li>
+            <li class="list-group-item">Price: $-{{this.price}}</li>
+            <li class="list-group-item">Description: {{this.description}}</li>
+            </ul>
+        {{/each}}
+    </div>
+</body>

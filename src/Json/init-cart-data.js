@@ -1,0 +1,3 @@
+const cartData = [{"cartId":3189,"products":[{"productid":1839,"quantity":1}]},{"cartId":2124,"products":[{"productid":1837,"quantity":1}]},{"cartId":3314,"products":[{"productid":3632,"quantity":1}]},{"cartId":2893,"products":[{"productid":3633,"quantity":1}]},{"cartId":3633,"products":[{"productid":3634,"quantity":1}]},{"cartId":1321,"products":[{"productid":3631,"quantity":6}]},{"cartId":3881,"products":[{"productid":3631,"quantity":6},{"productid":3336,"quantity":4},{"productid":3130,"quantity":2}]},{"cartId":650,"products":[{"productid":3056,"quantity":1}]},{"cartId":3189,"products":[{"productid":1839,"quantity":2}]},{"cartId":2499,"products":[{"productid":6781,"quantity":2},{"productid":8991,"quantity":3}]}]
+
+export default cartData;

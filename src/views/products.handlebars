@@ -1,0 +1,49 @@
+<container class="marco">
+
+<table id="productsTable" class="table" action="/api/products" method="get" > 
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio
+                <a href="/products?page={{page}}&sort={{sort}}"><button  type="button" class="btn btn-outline-primary btn-sm"> ordenar precio </button></a>
+                </th>
+            <th scope="col">Thumbnail</th>
+            <th scope="col">Código</th>
+            <th scope="col">Stock</th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each docs}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.thumbnail}}</td>
+            <td>{{this.code}}</td>
+            <td>{{this.stock}}</td>
+            <td><form action="api/cart/{{this.cart}}/product/{{this.id}}"  method="post" ><button class="btn btn-outline-primary" role="button" name="foo" id="adCart" value="Agregar al Carrito" > Agregar al carrito </button></form></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<div class="botonera">
+{{#if hasPrevPage}}
+<a href="{{prevLink}}"> <button  type="button" class="btn btn-primary">Pagina previa</button></a>
+{{/if}}
+
+<h5 class="numeracion">Pagina {{page}} de {{totalPages}}</h5>
+
+{{#if hasNextPage}}
+<a href="{{nextLink}}"><button  type="button" class="btn btn-primary"> Pagina siguiente</button></a>
+{{/if}}
+</div>
+
+</container>
+
+<form action="/api/session/logout"  method="get" ><button class="btn btn-outline-danger" role="button"> Log Out </button></form>

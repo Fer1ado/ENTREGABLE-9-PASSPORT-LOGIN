@@ -1,0 +1,58 @@
+<br>
+<h1>Registro de Usuario</h1>
+<br><br>
+
+<form id="addForm" action="/api/session/register"  method="post" >
+    <div class="row">
+        <div class="col-4 mb-3">
+            <label class="form-label" for="title">Nombre</label>
+            <input type="text" required name="Nombre">
+        </div>
+        <div class="col-4 mb-3">
+            <label for="description">Apellido</label>
+            <input type="text" required name="Apellido">
+        </div>
+        <div class="col-4 mb-3">
+            <label for="category">Email</label>
+            <input type="mail" required name="Email">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 mb-3">
+            <label for="price">Telefono</label>
+            <input type="number" required name="Telefono">
+        </div>
+        <div class="col-4 mb-3">
+            <label for="thumbnail">Password</label>
+            <input type="password" required name="Password">
+        </div>
+        <div class="col-4 mb-3">
+            <label for="stock">Edad</label>
+            <input type="number" required name="Edad">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 mb-3">
+            <label for="code">Genero</label>
+            <input type="text" required name="Genero">
+        </div>
+        <div class="col-4 mb-3">
+            <label for="code">País</label>
+            <input type="text" required name="Pais" >
+        </div>
+         <div class="col-4 mb-3">
+            <label for="thumbnail">Direccion</label>
+            <input type="text" required name="Direccion">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </div>
+</form>
+<br><br>

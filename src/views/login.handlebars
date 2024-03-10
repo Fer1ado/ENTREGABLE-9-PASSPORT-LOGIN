@@ -1,0 +1,33 @@
+<br>
+<h1> login</h1>
+<br><br>
+<container>
+<form id="addForm" action="/api/session/login"  method="get">
+    <div class="row justify-content-center"> 
+        <div class="form-group col-4 mb-3">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" required name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ingresar email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="form-group col-4 mb-3">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" required name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+    </div>
+  <div class="row justify-content-center">
+    <div class="form-group col-4 mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+<br><br>
+<div class="d-flex justify-content-end align-items-center pd-8" > 
+<div><h6> No estas registrado? ----->> </h6> </div>
+<form action="/register"  method="get" ><button class="btn btn-outline-secondary" role="button" > Registrate</button></form>
+</div>
+<br><br>
+</container>
+
+   
