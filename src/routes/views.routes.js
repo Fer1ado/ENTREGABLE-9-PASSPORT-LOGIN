@@ -3,6 +3,7 @@ import { MongoCartManager } from "../dao/db/cartManager.js"
 import {productModel} from "../dao/models/product.model.js"
 import { cartModel } from "../dao/models/cart.model.js";
 import AuthMdw from "../middleware/auth.middleware.js";
+import passport from "passport";
 
 
 const viewsRoute = Router()
@@ -153,17 +154,33 @@ viewsRoute.get("/realtimeproducts", (req, res) => {
       }
     }) */
     
-    viewsRoute.get("/login",  async (req, res) => {
+    viewsRoute.get("/login", async (req, res) => {
      res.render("login",{})
     })
 
+    viewsRoute.post("/login",passport.authenticate("login", {successRedirect:"/", failureRedirect: "/failedlogin", failureFlash: true}),)
+
+    viewsRoute.get("/failedlogin", async (req, res) => {
+      res.json({msg: "fallo el login"})
+    })
+
+
+
+    viewsRoute.post("/register", passport.authenticate("register", {successRedirect: "/",failureRedirect: "/failregister", failureFlash: true}),)
+    
     viewsRoute.get("/register", async (req, res) => {
-     res.render("register",{})
+      res.render("register")
+     
+    })
+
+    viewsRoute.get("/failregister", async (req, res) => {
+      res.render("failregister",{})
     })
 
     // TODO: aca viene el middleware de autenticacion
     viewsRoute.get("/profile", AuthMdw, async (req, res) =>{
       const user = req.session.user
+      console.log("🚀 ~ viewsRoute.get ~ user:", user)
 
       res.render("profile",{
         user,

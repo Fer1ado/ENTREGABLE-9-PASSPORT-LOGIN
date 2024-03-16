@@ -1,12 +1,14 @@
 import 'dotenv/config'
 import mongoose from 'mongoose';
 import handlebars from "express-handlebars";
+import passport from 'passport';
 import path from "path"
 import {Server} from "socket.io"
 import displayRoutes from 'express-routemap';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import mongoStore from 'connect-mongo';
+import initializePassport from "./config/passport.config.js"
 
 
 //importación de rutas persistencia archivos locales
@@ -58,7 +60,9 @@ app.use(session({
     saveUninitialized: false,
   })
 )
-
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 // RUTAS ESTATICAS PARA VIEWS
 app.use("/static", express.static(_dirname + "/public"))
