@@ -34,7 +34,7 @@ sessionRoute.get(
     async (req, res) => {}
   );
   
-sessionRoute.get("/github/callback", passport.authenticate("github", { failureRedirect: "/login" }),
+  sessionRoute.get("/github/callback", passport.authenticate("github", { failureRedirect: "/login" }),
     async (req, res) => {
       try {
         req.session.user = req.user;
@@ -57,8 +57,8 @@ sessionRoute.post("/login", async (req, res) => {
         const findUser = await userModel.findOne({ email: Email });
         const isValid = await isValidPassword(Password,findUser.password);
 
-        if (!findUser) return res.json({ message: "user not registered" });
-        if (!isValid) return res.json({ message: "wrong password" });
+        if (!findUser) return res.render("failregister", { message: "user not registered" });
+        if (!isValid) return res.render("failregister", { message: "wrong password" });
 
         req.session.user = { ...findUser };
 
@@ -118,11 +118,11 @@ sessionRoute.post("/register", async (req, res) => {
        // console.log("🚀 ~ sessionRoute.post ~ addUser:", addUser)
 
         const exist = await userModel.findOne({ email: Email });
-        if(exist) return res.json({ status: "failed", message: "user already registered", })
+        if(exist) return res.render ("failregister", { status: "failed", message: "user already registered", })
 
         const newUser = await userModel.create(addUser);
         // console.log("🚀 ~ sessionRoute.post ~ addUser:", addUser)
-        if (!newUser) return res.json({ message: "register failed" });
+        if (!newUser) return res.render("failregister", { message: "register failed" });
 
         req.session.user = { Nombre, Apellido, Email, Password };
         return res.redirect("/login");

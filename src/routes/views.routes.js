@@ -161,7 +161,7 @@ viewsRoute.get("/realtimeproducts", (req, res) => {
     viewsRoute.post("/login",passport.authenticate("login", {successRedirect:"/", failureRedirect: "/failedlogin", failureFlash: true}),)
 
     viewsRoute.get("/failedlogin", async (req, res) => {
-      res.json({msg: "fallo el login"})
+      res.render("failregister")
     })
 
 
@@ -169,11 +169,12 @@ viewsRoute.get("/realtimeproducts", (req, res) => {
     viewsRoute.post("/register", passport.authenticate("register", {successRedirect: "/",failureRedirect: "/failregister", failureFlash: true}),)
     
     viewsRoute.get("/register", async (req, res) => {
-      res.render("register")
+      res.render("register",{})
      
     })
 
     viewsRoute.get("/failregister", async (req, res) => {
+      console.log(req)
       res.render("failregister",{})
     })
 
