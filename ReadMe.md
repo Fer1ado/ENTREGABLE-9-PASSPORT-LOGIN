@@ -3,7 +3,43 @@
 <h1  style="text-align:center" > <font color="red">npm start</font> para levantar el programa </h1> 
 
 ---
-<h3  style="text-align:center" >----> TESTING ENTREGABLE 8 <---</h3> 
+<h3  style="text-align:center" >----> TESTING ENTREGABLE 9 <---</h3> 
+
+
+<br>
+<br>
+<h5 style="text-align:center" >Listado de rutas sobre las que se trabajo para la entrega y comentarios</h5> 
+<br>
+<br>
+
+| METODO             | RUTA | DESCRIPCION | COMMENTARIOS
+| :---------------- | :------: | :------: | :------: |
+| GET       |   localhost:8080/login   | vista de logín en hbs | Se implemento passport como middleware y hash para el manejo de password |
+| POST            |    localhost:8080/regiser    | tvista de registro de nuevo usuario en hbs  | Se implemento passport como middleware y hash para el manejo de registro de nuevos usuarios |
+| GET   |  localhost:8080/api/session/login     | endpoint de manejo de payload de login | se implemento la estrategia de passport y hash para la autenticación de usuario |
+| POST |  localhost:8080/api/session/register       | endpoint de manejo de payload de register | redirecciona a la pantalla de login cuando se completa el registro de usuario |
+| GET |  localhost:8080/api/session/github/callback  |  endpoint de manejo de payload para registro via github | se agrego la opción de logueo mediante github |
+| POST |  localhost:8080/failedlogin   | view para manejo de errores en el front | una view donde llegan los mensajes de error de autenticación y/o registro |
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3  style="text-align:center" >----> PREVIOS <---</h3> 
 
 <br> 
 <h5 style="text-align:center" >Crear archivo .env con misma variable de entorno que entregas previas</h5> 
@@ -22,19 +58,13 @@
 | GET |  localhost:8080/products  | ruta view de products con mongoose-paginate y sorting por precio| requiere autenticación |
 | POST |  localhost:8080/products/api/cart/:cid/product/:pid   | prueba de manipulacion de productos en carrito linkeado al view de products-paginate | requiere autenticación |
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
 
 ---
 
-<h3  style="text-align:center" >----> PREVIOS <---</h3> 
+
 
 
 | METODO             | RUTA | DESCRIPCION | COMMENTARIOS
